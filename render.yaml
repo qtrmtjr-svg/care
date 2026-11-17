@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: care
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+    routes:
+      - type: rewrite
+        source: /compare
+        destination: /compare.html
+      - type: rewrite
+        source: /privacy
+        destination: /privacy.html
+      - type: rewrite
+        source: /terms
+        destination: /terms.html
+      - type: rewrite
+        source: /admin
+        destination: /admin.html
+      - type: rewrite
+        source: /get-quote/motor
+        destination: /get-quote/motor.html
+      - type: rewrite
+        source: /get-quote/home
+        destination: /get-quote/home.html
+      - type: rewrite
+        source: /get-quote/travel
+        destination: /get-quote/travel.html
+      - type: rewrite
+        source: /get-quote/health
+        destination: /get-quote/health.html
+      - type: rewrite
+        source: /get-quote/pets
+        destination: /get-quote/pets.html
+      - type: rewrite
+        source: /get-quote/sme
+        destination: /get-quote/sme.html
+      - type: rewrite
+        source: /plan/motor
+        destination: /plan/motor.html
+      - type: rewrite
+        source: /plan/home
+        destination: /plan/home.html
+      - type: rewrite
+        source: /plan/health
+        destination: /plan/health.html
+      - type: rewrite
+        source: /plan/travel
+        destination: /plan/travel.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
